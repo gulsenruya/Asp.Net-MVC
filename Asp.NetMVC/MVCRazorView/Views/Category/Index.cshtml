@@ -1,0 +1,23 @@
+﻿@model List<MVCRazorView.Models.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+    </div>
+    <ul>
+        @foreach (MVCRazorView.Models.Category category in Model)
+        {
+            <li>@category.CategoryName</li>
+        }
+    </ul>
+</body>
+</html>

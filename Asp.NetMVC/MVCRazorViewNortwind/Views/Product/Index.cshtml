@@ -1,0 +1,42 @@
+﻿@model List<MVCRazorViewNortwind.Models.Product>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hower">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Ürün Adı</th>
+                        <th>Stok Miktarı</th>
+                        <th>Detay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (MVCRazorViewNortwind.Models.Product product in Model)
+                    {
+                    <tr>
+                        <td>@product.ProductID</td>
+                        <td>@product.ProductName</td>
+                        <td>@product.UnitsInStock</td>
+                        <td>
+                            <a href="/Product/Detail/@product.ProductID">Detay</a>
+</tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

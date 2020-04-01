@@ -1,0 +1,38 @@
+﻿@model MVCRazorViewNortwind.Models.Product
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hower">
+                <thead>
+                    <tr>
+                        <th>Kategori Adı </th>
+                        <th>Ürün Fiyat</th>
+                    
+                     
+                    </tr>
+                </thead>
+                <tbody>                   
+                        <tr>
+                            <td>@Model.Category.CategoryName</td>
+                            <td>@Model.UnitPrice</td>
+                           
+                            
+                        </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

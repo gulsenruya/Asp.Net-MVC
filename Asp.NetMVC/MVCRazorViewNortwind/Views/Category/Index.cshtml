@@ -1,0 +1,44 @@
+﻿@model List<MVCRazorViewNortwind.Models.Category>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <table class="table table-hower">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Kategori Adı</th>
+                        <th>Açıklama</th>
+                        <th>Detay</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (MVCRazorViewNortwind.Models.Category category in Model)
+                    {
+                    <tr>
+                        <td>@category.CategoryID</td>
+                        <td>@category.CategoryName</td>
+                        <td>@category.Description</td>
+                        <td>
+                            <a href="/Category/Detail/@category.CategoryID">Detay</a>
+                            <a href="/Category/Delete/@category.CategoryID">Delete</a>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

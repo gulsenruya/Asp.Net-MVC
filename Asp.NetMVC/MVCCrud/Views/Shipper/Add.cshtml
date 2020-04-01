@@ -1,0 +1,33 @@
+﻿@model Shipper
+@{
+    ViewBag.Title = "Shipper Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    @if (TempData["Bilgi"] != null)
+    {
+        <div class="alert text-danger">
+            <span>@TempData["Bilgi"]</span>
+        </div>
+    }
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label>Shipper Name</label>
+                    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                </div>
+                @Html.ActionLink("Cancel", "Index", null,new { @class="btn btn-default"})
+                <button type="submit" class="btn btn-primary">Send</button>
+            }
+        </div>
+    </div>
+</div>
+

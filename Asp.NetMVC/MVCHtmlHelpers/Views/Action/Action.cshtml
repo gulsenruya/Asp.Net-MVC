@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Action";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Action</h2>
+@Html.Action("_PartialAction")
+<hr />
+@Html.Action("_PartialActionRoute",new {id=1})
+<hr />
+@Html.Action("Help","Help")
