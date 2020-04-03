@@ -1,0 +1,44 @@
+﻿@model Product
+@{
+    ViewBag.Title = "Product Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="row">
+        <div class="col-lg-6">
+            <section class="panel">
+                <header class="panel-heading">
+                   Product Add
+                </header>
+                <div class="panel-body">
+                    @using (Html.BeginForm())
+                    {
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Name</label>
+                            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Product Name" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Price</label>
+                            @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", placeholder = "Product Price" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Stocks</label>
+                            @Html.TextBoxFor(x => x.UnitsInStock, new { @class = "form-control", placeholder = "Product Stocks" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Categories</label>
+                            @Html.DropDownList("Categories", "Select Categories")
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Suppliers</label>
+                            @Html.DropDownList("Suppliers", "Select Supplier")
+                        </div>
+                        <button type="submit" class="btn btn-info">Submit</button>
+
+                    }
+
+
+                </div>
+            </section>
+        </div>
+    </div>
